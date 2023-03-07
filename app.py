@@ -78,13 +78,7 @@ def tobs():
     most_active_last_year = session.query(Measurement.date).\
           order_by(Measurement.date.desc()).first()
     
-    # Return a JSON list of temperature observations for the previous year.
-    #Calculate date from 12 months prior
-    # last_date_values = []
-    # for date in most_active_last_year:
-    #     last_year_dict = {}
-    #     last_year_dict["date"] = date
-    #     last_date_values.append(last_year_dict)
+    # Return a JSON list of temperature observations for the previous year
     last_date = dt.date(2017, 8, 18) - dt.timedelta(days = 365)
 
     # Design a query to find the most active stations (i.e. what stations have the most rows?)
